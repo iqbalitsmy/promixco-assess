@@ -36,47 +36,49 @@
 </head>
 
 <body>
-    <!-- navigation section -->
-    <nav class="flex justify-between items-center text-base container mx-auto mt-10 mb-14 px-4 lg:px-0">
-        <h1 class="text-4xl">🍕</h1>
-        <div class="hidden lg:flex font-medium items-center">
-            <a class="pl-8" href="#">Restaurants</a>
-            <a class="pl-8" href="#">Recipes</a>
-            <a class="pl-8" href="#">About</a>
-            <div class="dropdown relative inline-block p-8">
-                <button class="dropbtn flex justify-center items-center gap-2">
-                    <span>Page</span>
-                    <i class="fa-solid fa-angle-down"></i>
-                </button>
-                <div class="dropdown-content hidden absolute z-10 shadow-sm pt-4">
-                    <a class="p-3 block hover:bg-[#f1f1f1]" href="#">Page 1</a>
-                    <a class="p-3 block hover:bg-[#f1f1f1]" href="#">Page 2</a>
-                    <a class="p-3 block hover:bg-[#f1f1f1]" href="#">Page 3</a>
+    <header>
+        <!-- navigation section -->
+        <nav class="flex justify-between items-center text-base container mx-auto mt-10 mb-14 px-4 lg:px-0">
+            <h1 class="text-4xl">🍕</h1>
+            <div class="hidden lg:flex font-medium items-center">
+                <a class="pl-10" href="#">Restaurants</a>
+                <a class="pl-10" href="#">Recipes</a>
+                <a class="pl-10" href="#">About</a>
+                <div class="dropdown relative inline-block p-10">
+                    <button class="dropbtn flex justify-center items-center gap-2">
+                        <span>Page</span>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </button>
+                    <div class="dropdown-content hidden absolute z-10 shadow-sm pt-4">
+                        <a class="p-3 block hover:bg-[#f1f1f1]" href="#">Page 1</a>
+                        <a class="p-3 block hover:bg-[#f1f1f1]" href="#">Page 2</a>
+                        <a class="p-3 block hover:bg-[#f1f1f1]" href="#">Page 3</a>
+                    </div>
                 </div>
             </div>
+            <div class="hidden lg:flex gap-6 items-center font-semibold">
+                <button type="button">Login</button>
+                <button class="py-3 px-6 bg-red-500 text-white rounded-full" type="button">Sign Up</button>
+            </div>
+            <button id="menuToggle" class="block lg:hidden p-2">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <!-- drawer -->
+        <div id="drawer" class="fixed inset-y-0 left-0 bg-white w-64 p-6 hidden-drawer lg:hidden z-50">
+            <button id="closeDrawer" class="mb-4">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            <a class="block py-2 text-lg font-medium" href="#">Restaurants</a>
+            <a class="block py-2 text-lg font-medium" href="#">Recipes</a>
+            <a class="block py-2 text-lg font-medium" href="#">About</a>
+            <div class="mt-4">
+                <button class="block w-full py-3 text-left text-lg font-medium" type="button">Login</button>
+                <button class="block w-full py-3 mt-2 text-lg font-medium bg-red-500 text-white rounded-full"
+                    type="button">Sign Up</button>
+            </div>
         </div>
-        <div class="hidden lg:flex gap-6 items-center font-semibold">
-            <button type="button">Login</button>
-            <button class="py-3 px-6 bg-red-500 text-white rounded-full" type="button">Sign Up</button>
-        </div>
-        <button id="menuToggle" class="block lg:hidden p-2">
-            <i class="fas fa-bars text-2xl"></i>
-        </button>
-    </nav>
-    <!-- drawer -->
-    <div id="drawer" class="fixed inset-y-0 left-0 bg-white w-64 p-6 hidden-drawer lg:hidden z-50">
-        <button id="closeDrawer" class="mb-4">
-            <i class="fas fa-times text-2xl"></i>
-        </button>
-        <a class="block py-2 text-lg font-medium" href="#">Restaurants</a>
-        <a class="block py-2 text-lg font-medium" href="#">Recipes</a>
-        <a class="block py-2 text-lg font-medium" href="#">About</a>
-        <div class="mt-4">
-            <button class="block w-full py-3 text-left text-lg font-medium" type="button">Login</button>
-            <button class="block w-full py-3 mt-2 text-lg font-medium bg-red-500 text-white rounded-full"
-                type="button">Sign Up</button>
-        </div>
-    </div>
+    </header>
     <!-- navigation section -->
     <!-- <nav class="flex justify-between items-center text-base container mx-auto mt-10 mb-14">
         <h1 class="text-4xl">🍕</h1>
@@ -208,9 +210,9 @@
                         class="text-[#FF5331]">10,000</span> dishes to order!</h2>
                 <p>Welcome to The Biggest Network of Food Ordering & Delivery</p>
             </div>
-            <div class="grid grid-cols-7 gap-8 items-center">
+            <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-7 gap-8 items-center">
                 <div
-                    class="bg-[#FAFAFA] p-4 rounded-xl text-center col-start-2 col-end-3 flex justify-center items-center flex-col h-full">
+                    class="bg-[#FAFAFA] p-4 rounded-xl text-center lg:col-start-2 lg:col-end-3 flex justify-center items-center flex-col h-full">
                     <div class="text-4xl font-medium p-4 bg-white rounded-full inline-block mb-2">
                         <p>🍕</p>
                     </div>
@@ -228,7 +230,7 @@
                     </div>
                     <p class="text-2xl font-medium">Sushi</p>
                 </div>
-                <div class="text-2xl font-medium bg-[#FAFAFA] rounded-xl p-6 col-start-5 col-end-8">
+                <div class="text-2xl font-medium bg-[#FAFAFA] rounded-xl p-6 w-full col-start-1 col-end-4 sm:col-start-1 sm:col-end-4 lg:col-start-5 lg:col-end-8">
                     <p class="max-w-md">Find <span class="text-[#FF5331]">deals</span><span class="text-[#009B00]">,
                             free
                             delivery,</span> and more from our restaurant partners.</p>
@@ -358,7 +360,8 @@
         </section>
         <section class="bg-black text-white">
             <div class="container mx-auto py-32 px-4 lg:px-0">
-                <div class="flex flex-col sm:flex-row lg:justify-between items-center md:items-start flex-wrap gap-10 mb-36">
+                <div
+                    class="flex flex-col sm:flex-row lg:justify-between items-center md:items-start flex-wrap gap-10 mb-36">
                     <div class="max-w-sm">
                         <h1 class="text-4xl mb-20">🍕</h1>
                         <div class="flex flex-col md:flex-row items-center gap-6 text-black">
