@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./style.css" rel="stylesheet">
+    <link href="./custom-style.css" rel="stylesheet">
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/3273c59d8d.js" crossorigin="anonymous"></script>
+
+    <title>🍕</title>
+    <style>
+        /* navigation drawer css */
+        .hidden-drawer {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .visible-drawer {
+            transform: translateX(0);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* dropdown button */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* for image fit */
+        .obj-image {
+            object-position: right bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- navigation section -->
+    <nav class="flex justify-between items-center text-base container mx-auto mt-10 mb-14 px-4 lg:px-0">
+        <h1 class="text-4xl">🍕</h1>
+        <div class="hidden lg:flex font-medium items-center">
+            <a class="pl-8" href="#">Restaurants</a>
+            <a class="pl-8" href="#">Recipes</a>
+            <a class="pl-8" href="#">About</a>
+            <div class="dropdown relative inline-block p-8">
+                <button class="dropbtn flex justify-center items-center gap-2">
+                    <span>Page</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+                <div class="dropdown-content hidden absolute z-10 shadow-sm pt-4">
+                    <a class="p-3 block hover:bg-[#f1f1f1]" href="#">Page 1</a>
+                    <a class="p-3 block hover:bg-[#f1f1f1]" href="#">Page 2</a>
+                    <a class="p-3 block hover:bg-[#f1f1f1]" href="#">Page 3</a>
+                </div>
+            </div>
+        </div>
+        <div class="hidden lg:flex gap-6 items-center font-semibold">
+            <button type="button">Login</button>
+            <button class="py-3 px-6 bg-red-500 text-white rounded-full" type="button">Sign Up</button>
+        </div>
+        <button id="menuToggle" class="block lg:hidden p-2">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
+    </nav>
+    <!-- drawer -->
+    <div id="drawer" class="fixed inset-y-0 left-0 bg-white w-64 p-6 hidden-drawer lg:hidden z-50">
+        <button id="closeDrawer" class="mb-4">
+            <i class="fas fa-times text-2xl"></i>
+        </button>
+        <a class="block py-2 text-lg font-medium" href="#">Restaurants</a>
+        <a class="block py-2 text-lg font-medium" href="#">Recipes</a>
+        <a class="block py-2 text-lg font-medium" href="#">About</a>
+        <div class="mt-4">
+            <button class="block w-full py-3 text-left text-lg font-medium" type="button">Login</button>
+            <button class="block w-full py-3 mt-2 text-lg font-medium bg-red-500 text-white rounded-full"
+                type="button">Sign Up</button>
+        </div>
+    </div>
+    <!-- navigation section -->
+    <!-- <nav class="flex justify-between items-center text-base container mx-auto mt-10 mb-14">
+        <h1 class="text-4xl">🍕</h1>
+        <div class="font-medium flex items-center">
+            <a class="pl-8" href="">Restaurants</a>
+            <a class="pl-8" href="">Recipes</a>
+            <a class="pl-8" href="">About</a>
+            <div class="dropdown relative inline-block p-8">
+                <button class="dropbtn flex justify-center items-center gap-2">
+                    <span>Page</span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </button>
+                <div class="dropdown-content hidden absolute z-10 shadow-sm pt-4">
+                    <a class="p-3 block hover:bg-[#f1f1f1]" href="#">Page 1</a>
+                    <a class="p-3 block hover:bg-[#f1f1f1]" href="#">Page 2</a>
+                    <a class="p-3 block hover:bg-[#f1f1f1]" href="#">Page 3</a>
+                </div>
+            </div>
+        </div>
+        <div class="flex gap-6 items-center font-semibold">
+            <button class="" type="button">Login</button>
+            <button class="py-3 px-6 bg-[#E94339] text-white rounded-full" type="button">Sign Up</button>
+        </div>
+    </nav> -->
+
+    <!-- main container -->
+    <main class="container mx-auto px-4 lg:px-0">
+        <!-- Hero section -->
+        <section class="flex flex-col md:flex-row justify-around gap-6 items-center mb-32">
+            <div class="max-w-xl">
+                <h2 class="text-[61px] font-bold">Your Favorite Food Delivery Partner</h2>
+                <p class="text-lg text-[#191720] mb-6 max-w-md">The food at your doorstep. Why starve when you have us.
+                    You
+                    hunger partner. Straight out of the oven
+                    to your doorstep. </p>
+                <div class="w-full max-w-md relative mb-8">
+                    <input class="pl-4 py-5 bg-[#F6F6F6] w-full rounded-full outline-none" type="text" name="" id=""
+                        placeholder="Enter your delivery location">
+                    <input
+                        class="px-4 bg-[#FF5331] text-white text-lg font-semibold rounded-full absolute top-1 bottom-1 right-2"
+                        type="submit" name="" id="" value="Order Now">
+                </div>
+                <!-- download app section -->
+                <div class="flex items-center gap-8">
+                    <a href="" class="flex items-center gap-2 bg-[#F4F4F4] px-4 py-2 rounded-md">
+                        <i class="text-4xl fa-brands fa-apple"></i>
+                        <div class="">
+                            <p class="text-xs -mb-1">Download on the</p>
+                            <p class="text-xl font-semibold">App Store</p>
+                        </div>
+                    </a>
+                    <a href="" class="flex items-center gap-2 bg-[#F4F4F4] px-4 py-2 rounded-md">
+                        <div>
+                            <svg height="36px" width="36px" viewBox="-29.45 0 466.9 466.9" id="Layer_1"
+                                xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <style>
+                                        .st0 {
+                                            fill: url(#SVGID_1_)
+                                        }
+
+                                        .st1 {
+                                            fill: url(#SVGID_2_)
+                                        }
+
+                                        .st2 {
+                                            fill: url(#SVGID_3_)
+                                        }
+
+                                        .st3 {
+                                            fill: url(#SVGID_4_)
+                                        }
+                                    </style>
+                                    <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" y1="112.094"
+                                        x2="261.746" y2="112.094">
+                                        <stop offset="0" stop-color="#63be6b"></stop>
+                                        <stop offset=".506" stop-color="#5bbc6a"></stop>
+                                        <stop offset="1" stop-color="#4ab96a"></stop>
+                                    </linearGradient>
+                                    <path class="st0"
+                                        d="M261.7 142.3L15 1.3C11.9-.5 8-.4 5 1.4c-3.1 1.8-5 5-5 8.6 0 0 .1 13 .2 34.4l179.7 179.7 81.8-81.8z">
+                                    </path>
+                                    <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1=".152" y1="223.393"
+                                        x2="179.896" y2="223.393">
+                                        <stop offset="0" stop-color="#3ec6f2"></stop>
+                                        <stop offset="1" stop-color="#45afe3"></stop>
+                                    </linearGradient>
+                                    <path class="st1" d="M.2 44.4C.5 121.6 1.4 309 1.8 402.3L180 224.1.2 44.4z"></path>
+                                    <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="179.896"
+                                        y1="229.464" x2="407.976" y2="229.464">
+                                        <stop offset="0" stop-color="#faa51a"></stop>
+                                        <stop offset=".387" stop-color="#fab716"></stop>
+                                        <stop offset=".741" stop-color="#fac412"></stop>
+                                        <stop offset="1" stop-color="#fac80f"></stop>
+                                    </linearGradient>
+                                    <path class="st2"
+                                        d="M402.9 223l-141.2-80.7-81.9 81.8 92.4 92.4L403 240.3c3.1-1.8 5-5.1 5-8.6 0-3.6-2-6.9-5.1-8.7z">
+                                    </path>
+                                    <linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="1.744" y1="345.521"
+                                        x2="272.296" y2="345.521">
+                                        <stop offset="0" stop-color="#ec3b50"></stop>
+                                        <stop offset="1" stop-color="#e7515b"></stop>
+                                    </linearGradient>
+                                    <path class="st3"
+                                        d="M1.7 402.3c.2 33.3.3 54.6.3 54.6 0 3.6 1.9 6.9 5 8.6 3.1 1.8 6.9 1.8 10 0l255.3-148.9-92.4-92.4L1.7 402.3z">
+                                    </path>
+                                </g>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-xs -mb-1">Get it On</p>
+                            <p class="text-xl font-semibold">Google Play</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <div class="bg-[#F2EBDA] max-h-[470px] max-w-[570px] rounded-2xl px-10 pt-10">
+                    <img class="max-h-[450px] w-auto mx-auto" src="../assets/bag-man.png" alt="">
+                </div>
+            </div>
+        </section>
+        <!-- Biggest Network of Food Ordering & Delivery section -->
+        <section class="mb-32">
+            <div class="text-center mb-8">
+                <h2 class="capitalize text-[46px] font-semibold mb-4 max-w-xl mx-auto">More than <span
+                        class="text-[#FF5331]">10,000</span> dishes to order!</h2>
+                <p>Welcome to The Biggest Network of Food Ordering & Delivery</p>
+            </div>
+            <div class="grid grid-cols-7 gap-8 items-center">
+                <div
+                    class="bg-[#FAFAFA] p-4 rounded-xl text-center col-start-2 col-end-3 flex justify-center items-center flex-col h-full">
+                    <div class="text-4xl font-medium p-4 bg-white rounded-full inline-block mb-2">
+                        <p>🍕</p>
+                    </div>
+                    <p class="text-2xl font-medium">Pizza</p>
+                </div>
+                <div class="bg-[#FAFAFA] p-4 rounded-xl text-center flex justify-center items-center flex-col h-full">
+                    <div class="text-4xl font-medium p-4 bg-white rounded-full inline-block mb-2">
+                        <p>🍔</p>
+                    </div>
+                    <p class="text-2xl font-medium">Burger</p>
+                </div>
+                <div class="bg-[#FAFAFA] p-4 rounded-xl text-center flex justify-center items-center flex-col h-full">
+                    <div class="text-4xl font-medium p-4 bg-white rounded-full inline-block mb-2">
+                        <p>🍣</p>
+                    </div>
+                    <p class="text-2xl font-medium">Sushi</p>
+                </div>
+                <div class="text-2xl font-medium bg-[#FAFAFA] rounded-xl p-6 col-start-5 col-end-8">
+                    <p class="max-w-md">Find <span class="text-[#FF5331]">deals</span><span class="text-[#009B00]">,
+                            free
+                            delivery,</span> and more from our restaurant partners.</p>
+                    <div class="max-h-32">
+                        <img class="object-right-bottom obj-image w-full max-h-20 block object-contain"
+                            src="../assets/bike.png" alt="">
+                    </div>
+                </div>
+                <div class="col-start-1 col-end-4">
+                    <div class="text-7xl">
+                        <i class="fa-solid fa-quote-right"></i>
+                    </div>
+                    <p class="text-xl text-gray-600">“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua.”</p>
+                </div>
+                <div class="bg-[#FAFAFA] p-4 rounded-xl text-center flex justify-center items-center flex-col h-full">
+                    <div class="text-4xl font-medium p-4 bg-white rounded-full inline-block mb-2">
+                        <p>🍝</p>
+                    </div>
+                    <p class="text-2xl font-medium">Pasta</p>
+                </div>
+                <div class="bg-[#FAFAFA] p-4 rounded-xl text-center flex justify-center items-center flex-col h-full">
+                    <div class="text-4xl font-medium p-4 bg-white rounded-full inline-block  mb-2">
+                        <p>🥗</p>
+                    </div>
+                    <p class="text-2xl font-medium">Salad</p>
+                </div>
+                <div class="bg-[#FAFAFA] p-4 rounded-xl text-center flex justify-center items-center flex-col h-full">
+                    <div class="text-4xl font-medium p-4 bg-white rounded-full inline-block mb-2">
+                        <p>🍰</p>
+                    </div>
+                    <p class="text-2xl font-medium">Desserts</p>
+                </div>
+            </div>
+        </section>
+        <!-- How To Order section -->
+        <section class="text-center mb-32">
+            <h1 class="text-[46px] font-semibold mb-6">How To Order?</h1>
+            <div class="flex flex-wrap justify-between gap-4">
+                <div class="max-w-48">
+                    <h4 class="text-left text-[43px] font-semibold text-[#FF5331]">01</h4>
+                    <div
+                        class="bg-[#FAFAFA] px-4 py-8 rounded-xl text-center flex justify-center items-center flex-col">
+                        <div class="text-5xl font-medium p-4 bg-white rounded-lg mb-2">
+                            <p>📍</p>
+                        </div>
+                        <p class="text-2xl font-medium">Choose your location</p>
+                    </div>
+                </div>
+                <div class="max-w-48">
+                    <h4 class="text-left text-[43px] font-semibold text-[#FF5331]">02</h4>
+                    <div
+                        class="bg-[#FAFAFA] px-4 py-8 rounded-xl text-center flex justify-center items-center flex-col">
+                        <div class="text-5xl font-medium p-4 bg-white rounded-lg mb-2">
+                            <p>🙇🏻‍♂️</p>
+                        </div>
+                        <p class="text-2xl font-medium">Choose what to eat</p>
+                    </div>
+                </div>
+                <div class="max-w-48">
+                    <h4 class="text-left text-[43px] font-semibold text-[#FF5331]">03</h4>
+                    <div
+                        class="bg-[#FAFAFA] px-4 py-8 rounded-xl text-center flex justify-center items-center flex-col">
+                        <div class="text-5xl font-medium p-4 bg-white rounded-lg mb-2">
+                            <p>🍔</p>
+                        </div>
+                        <p class="text-2xl font-medium">May your first order</p>
+                    </div>
+                </div>
+                <div class="max-w-48">
+                    <h4 class="text-left text-[43px] font-semibold text-[#FF5331]">04</h4>
+                    <div
+                        class="bg-[#FAFAFA] px-4 py-8 rounded-xl text-center flex justify-center items-center flex-col">
+                        <div class="text-5xl font-medium p-4 bg-white rounded-lg mb-2">
+                            <p>🏠</p>
+                        </div>
+                        <p class="text-2xl font-medium">Now! Your food in way</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Clients Feedback section -->
+        <section class="text-center mb-32">
+            <div class="mb-6">
+                <h1 class="text-[46px] font-semibold mb-3">Our Clients Feedback</h1>
+                <p class="max-w-md mx-auto">The food at your doorstep. Why starve when you have us. You hunger partner.
+                    Straight out of the oven
+                    to your doorstep.</p>
+            </div>
+            <div>
+                <div class="text-7xl text-[#FF5331] mb-4">
+                    <i class="fa-solid fa-quote-left"></i>
+                </div>
+                <div class="flex overflow-hidden w-full" id="carousel">
+                    <div class="flex transition-transform ease-in-out" id="carousel-inner">
+
+                    </div>
+                </div>
+                <div class="text-3xl flex items-center justify-center gap-4 mt-4">
+                    <button
+                        class="bg-[#FF5331] text-white disabled:bg-gray-200 disabled:text-black  px-[7px] rounded-full text-center"
+                        type="button" id="prevFeedback" onclick="prevFeedback()">&lt;</button>
+                    <button
+                        class="bg-[#FF5331] text-white disabled:bg-gray-200 disabled:text-black  px-2 rounded-full text-center"
+                        type="button" id="nextFeedback" onclick="nextFeedback()">&gt;</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="">
+        <!-- newsletter section -->
+        <section class="bg-[#FFEFEC]">
+            <div
+                class="container mx-auto py-16 flex flex-col sm:flex-row justify-between items-center gap-8 px-4 lg:px-0">
+                <div class="max-w-xl">
+                    <h2 class="text-[46px] font-semibold mb-2">Subscribe our newsletter</h2>
+                    <p class="">Browse local restaurants and businesses for delivery by entering your address blow.</p>
+                </div>
+                <div class="relative w-full max-w-md">
+                    <input class="pl-6 py-5 bg-white w-full rounded-full outline-none" type="text" name="" id=""
+                        placeholder="Enter your email address...">
+                    <input
+                        class="px-6 bg-[#FF5331] text-white text-lg font-semibold rounded-full absolute top-1 bottom-1 right-2"
+                        type="submit" name="" id="" value="Send">
+                </div>
+            </div>
+        </section>
+        <section class="bg-black text-white">
+            <div class="container mx-auto py-32 px-4 lg:px-0">
+                <div class="flex flex-col sm:flex-row lg:justify-between items-center md:items-start flex-wrap gap-10 mb-36">
+                    <div class="max-w-sm">
+                        <h1 class="text-4xl mb-20">🍕</h1>
+                        <div class="flex flex-col md:flex-row items-center gap-6 text-black">
+                            <div class="flex items-center gap-2 bg-[#F4F4F4] py-2 px-3 rounded-md">
+                                <i class="text-4xl fa-brands fa-apple"></i>
+                                <div class="">
+                                    <p class="text-xs -mb-1">Download on the</p>
+                                    <p class="text-xl font-semibold min-w-24">App Store</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 bg-[#F4F4F4] py-2 px-3 rounded-md">
+                                <div>
+                                    <svg height="36px" width="36px" viewBox="-29.45 0 466.9 466.9" id="Layer_1"
+                                        xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <style>
+                                                .st0 {
+                                                    fill: url(#SVGID_1_)
+                                                }
+
+                                                .st1 {
+                                                    fill: url(#SVGID_2_)
+                                                }
+
+                                                .st2 {
+                                                    fill: url(#SVGID_3_)
+                                                }
+
+                                                .st3 {
+                                                    fill: url(#SVGID_4_)
+                                                }
+                                            </style>
+                                            <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" y1="112.094"
+                                                x2="261.746" y2="112.094">
+                                                <stop offset="0" stop-color="#63be6b"></stop>
+                                                <stop offset=".506" stop-color="#5bbc6a"></stop>
+                                                <stop offset="1" stop-color="#4ab96a"></stop>
+                                            </linearGradient>
+                                            <path class="st0"
+                                                d="M261.7 142.3L15 1.3C11.9-.5 8-.4 5 1.4c-3.1 1.8-5 5-5 8.6 0 0 .1 13 .2 34.4l179.7 179.7 81.8-81.8z">
+                                            </path>
+                                            <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1=".152"
+                                                y1="223.393" x2="179.896" y2="223.393">
+                                                <stop offset="0" stop-color="#3ec6f2"></stop>
+                                                <stop offset="1" stop-color="#45afe3"></stop>
+                                            </linearGradient>
+                                            <path class="st1" d="M.2 44.4C.5 121.6 1.4 309 1.8 402.3L180 224.1.2 44.4z">
+                                            </path>
+                                            <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="179.896"
+                                                y1="229.464" x2="407.976" y2="229.464">
+                                                <stop offset="0" stop-color="#faa51a"></stop>
+                                                <stop offset=".387" stop-color="#fab716"></stop>
+                                                <stop offset=".741" stop-color="#fac412"></stop>
+                                                <stop offset="1" stop-color="#fac80f"></stop>
+                                            </linearGradient>
+                                            <path class="st2"
+                                                d="M402.9 223l-141.2-80.7-81.9 81.8 92.4 92.4L403 240.3c3.1-1.8 5-5.1 5-8.6 0-3.6-2-6.9-5.1-8.7z">
+                                            </path>
+                                            <linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="1.744"
+                                                y1="345.521" x2="272.296" y2="345.521">
+                                                <stop offset="0" stop-color="#ec3b50"></stop>
+                                                <stop offset="1" stop-color="#e7515b"></stop>
+                                            </linearGradient>
+                                            <path class="st3"
+                                                d="M1.7 402.3c.2 33.3.3 54.6.3 54.6 0 3.6 1.9 6.9 5 8.6 3.1 1.8 6.9 1.8 10 0l255.3-148.9-92.4-92.4L1.7 402.3z">
+                                            </path>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-xs -mb-1">Get it On</p>
+                                    <p class="text-xl font-semibold min-w-28">Google Play</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="flex justify-around flex-wrap"> -->
+                    <div class="flex flex-col text-[#B5B2B2] text-lg space-y-3 w-fit">
+                        <p class="font-semibold text-white">Quick links</p>
+                        <a class="hover:text-gray-200" href="">Features</a>
+                        <a class="hover:text-gray-200" href="">Food Menu</a>
+                        <a class="hover:text-gray-200" href="">Offer</a>
+                        <a class="hover:text-gray-200" href="">Review</a>
+                        <a class="hover:text-gray-200" href="">Rider</a>
+                    </div>
+                    <div class="flex flex-col text-[#B5B2B2] text-lg space-y-3 w-fit">
+                        <p class="font-semibold text-white">Get to Know Us</p>
+                        <a class="hover:text-gray-200" href="">Gift Cards</a>
+                        <a class="hover:text-gray-200" href="">DoorDash Stories
+                        </a>
+                        <a class="hover:text-gray-200" href="">LinkedIn
+                        </a>
+                        <a class="hover:text-gray-200" href="">Glassdoor
+                        </a>
+                        <a class="hover:text-gray-200" href="">Accessibility</a>
+                    </div>
+                    <div class="flex flex-col text-[#B5B2B2] text-lg space-y-3 w-fit">
+                        <p class="font-semibold text-white">News</p>
+                        <a class="hover:text-gray-200" href="">Blog</a>
+                        <a class="hover:text-gray-200" href="">FAQ</a>
+                        <a class="hover:text-gray-200" href="">Lift Media </a>
+                        <a class="hover:text-gray-200" href="">Press</a>
+                        <a class="hover:text-gray-200" href="">Presse kit</a>
+                    </div>
+                    <div class="flex flex-col text-[#B5B2B2] text-lg space-y-3 w-fit text-center">
+                        <p class="font-semibold text-white">Contact</p>
+                        <a class="hover:text-gray-200" href="">WhatsApp</a>
+                        <a class="hover:text-gray-200" href="">Support 24</a>
+                    </div>
+                    <!-- </div> -->
+                </div>
+                <div class="flex justify-between items-center text-[#B5B2B2]">
+                    <div class="w-full">
+                        <p>© 2023 pizza.All right reserved</p>
+                    </div>
+                    <div class="w-full flex flex-wrap gap-8 justify-around max-w-md">
+                        <a class="hover:text-gray-200" href="#">Privacy</a>
+                        <a class="hover:text-gray-200" href="">Policy</a>
+                        <a class="hover:text-gray-200" href="">Terms</a>
+                        <a class="hover:text-gray-200" href="">Services</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <script src="./index.js"></script>
+</body>
+
+</html>
